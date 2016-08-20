@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    h1= title
+    p Reference
+    ul
+        li
+            a(href="/users", target="_blank") Users : get all users (GET)
+        li
+            a(href="/users/2", target="_blank") Users : specific user (GET)
+        li
+            a(href="/users/add", target="_blank") Users : add users (POST)
+        li
+            a(href="/users/delete/2", target="_blank") Users : delete user (DELETE)
+        li
+            a(href="/users/update", target="_blank") Users : update user (PUT)
+
+
+            form(name="add-estimation", method="post")
+                div.input
+                    span.label Search
+                    input(type="text", name="search")
+                div.input
+                    span.label Desc.
+                    textarea(name="description", cols="40", rows="5")
+                div.actions
+                    input(type="submit", value="add")
