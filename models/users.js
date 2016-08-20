@@ -14,7 +14,6 @@ class Users {
      * Create a new user instance, open MySql connection if needed
      */
     constructor() {
-    console.log(config.database);
         this._connection = mysql.createConnection(config.database);
         this._connection.connect();
     }
@@ -27,7 +26,6 @@ class Users {
         var passwordMd5 = crypto.createHash('md5').update(user.password).digest('hex');
 
         var insert = {username: user.username, password: passwordMd5};
-        console.log(insert);
         this._connection.query('INSERT INTO users SET ?', insert, function (err, rows, fields) {
                 if (err) {
                     return callback(err);
@@ -49,7 +47,6 @@ class Users {
 
         var update = {username: user.username, password: passwordMd5};
         this._connection.query('UPDATE users SET ? WHERE id = ?', [update, user.id], function (err, rows, fields) {
-                console.log(err);
                 if (err) {
                     return callback(err);
                 }
@@ -67,7 +64,6 @@ class Users {
     deleteUser(id, callback) {
 
         this._connection.query('DELETE FROM users WHERE id = ?', id, function (err, rows, fields) {
-                console.log(err);
                 if (err) {
                     return callback(err);
                 }
@@ -84,10 +80,7 @@ class Users {
      */
     getUser(id, callback) {
 
-		console.log(id);
-
         this._connection.query('SELECT id, username FROM users WHERE id = ?', id, function (err, rows, fields) {
-                console.log(err);
                 if (err) {
                     return callback(err);
                 }
@@ -105,7 +98,6 @@ class Users {
     getAllUsers(callback) {
 
 		this._connection.query('SELECT * FROM users', function (err, rows, fields) {
-                console.log(err);
                 if (err) {
                     return callback(err);
                 }
