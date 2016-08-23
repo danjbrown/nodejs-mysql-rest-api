@@ -6,15 +6,25 @@ NodeJS MySql REST API
 This is a NodeJS RESTful API designed to communicate with a MySql database:
 
  * The code, which could be used as a skeleton for other purposes, uses GET, PUT, UPDATE and DELETE methods to manipulate users in a MySql database.
- * Example parameters for the MySql connection are provided.
+ * Example parameters for the MySql connection are provided in a separate configuration file /models/config.js.
  * The code uses ECMAScript 6 standards including classes, therefore please run it using the latest version of NodeJS.
 
 ### Usage
 
- * Clone or download the repository.
+Clone or download the repository.
 
- * Install the application: npm install
+Install the application:
 
- * Run the application: node index.js (NODE bin/www on MacOS)
+ ```
+ npm install
+ ```
 
- * Navigate to http://localhost:8080 to read the overview
+Run the application
+
+ ```
+ node bin/www
+ ```
+
+Navigate to http://localhost:8080 to view the web service menu
+
+More documentation to follow...
