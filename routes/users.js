@@ -6,8 +6,8 @@ var User = require('../models/users.js');
 // POST: add a new user
 router.post('/add', function (req, res) {
     // validate input using express-validator
-    req.checkQuery('username', 'Invalid user name').len(6, 50);
-    req.checkQuery('password', 'Invalid password').len(6, 20);
+    req.checkBody('username', 'Invalid user name').len(6, 50);
+    req.checkBody('password', 'Invalid password').len(6, 20);
     var validationErrors = req.validationErrors();
     if (validationErrors) {
         var data = {'error': 'invalid_params', 'error_messages': validationErrors};
@@ -49,11 +49,11 @@ router.get('/', function (req, res) {
 })
 
 // PUT: update an existing user
-router.put('/update', function (req, res) {
+router.put('/update/:id', function (req, res) {
     // validate input using express-validator
-    req.checkQuery("username", "Invalid username").len(6, 20);
-    req.checkQuery('password', 'Invalid password').len(6, 20);
-    req.checkQuery("id", "Invalid user id").isInt();
+    req.checkBody("username", "Invalid username").len(6, 20);
+    req.checkBody('password', 'Invalid password').len(6, 20);
+    req.checkParams("id", "Invalid user id").isInt();
     var validationErrors = req.validationErrors();
     if (validationErrors) {
         var data = {'error': 'invalid_params', 'error_messages': validationErrors};
@@ -61,7 +61,7 @@ router.put('/update', function (req, res) {
         res.end(JSON.stringify(data));
     } else {
         var user = {
-            "id": req.query.id,
+            "id": req.params.id,
             "username": req.query.username,
             "password": req.query.password
         }

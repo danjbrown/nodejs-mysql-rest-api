@@ -2,15 +2,17 @@ extends layout
 
 block content
     h1= title
-    p Reference
+    p List of web services with example parameters.
+    p In keeping with a RESTful API the web services are stateless, use HTTP methods explicitly and where necessary expose directory style URIs. 
+    p The web services return relevant HTTP codes and status information in JSON format.
     ul
         li
-            a(href="/users", target="_blank") Users : get all users (GET)
+            a(href="/users", target="_blank") Get all users (GET)
         li
-            a(href="/users/2", target="_blank") Users : specific user (GET)
+            a(href="/users/2", target="_blank") Retrieve the details of a specific user, id exposed in the directory structure URI (GET)
         li
-            a(href="/users/add", target="_blank") Users : add users (POST)
+            a(href="/users/add", target="_blank") Add a new user (POST)
         li
-            a(href="/users/delete/2", target="_blank") Users : delete user (DELETE)
+            a(href="/users/delete/2", target="_blank") Delete a user, id exposed in the URI (DELETE)
         li
-            a(href="/users/update", target="_blank") Users : update user (PUT)
+            a(href="/users/update/2", target="_blank") Update a user, id exposed in the URI (PUT)
