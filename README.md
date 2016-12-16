@@ -33,6 +33,24 @@ Run the application, using nodemon
 
 Navigate to [http://localhost:3000](http://localhost:3000) to view the web service menu
 
+###
+RESTful API Specification
+GET: Retrieve all users
+/users
+
+GET: Retrieve details for a single user
+/users/:id
+param: user id
+
+POST: Create a new user
+/users/add
+param: username
+param: password
+
+PUT: Update a user
+/users/delete/:id
+param: id
+
 Response format
 
  ```

@@ -1,12 +1,12 @@
 'use strict';
 
-var fs = require("fs");
-var mysql = require('mysql');
-var crypto = require('crypto');
+const fs = require("fs");
+const mysql = require('mysql');
+const crypto = require('crypto');
 
 // global config
-var env = process.env.NODE_ENV || 'development';
-var config = require('./config')[env];
+const env = process.env.NODE_ENV || 'development';
+const config = require('./config')[env];
 
 class Users {
 
@@ -23,9 +23,9 @@ class Users {
      */
     addUser(user, callback) {
 
-        var passwordMd5 = crypto.createHash('md5').update(user.password).digest('hex');
+        let passwordMd5 = crypto.createHash('md5').update(user.password).digest('hex');
 
-        var insert = {username: user.username, password: passwordMd5};
+        let insert = {username: user.username, password: passwordMd5};
         this._connection.query('INSERT INTO users SET ?', insert, function (err, rows, fields) {
                 if (err) {
                     return callback(err);
@@ -43,9 +43,9 @@ class Users {
      */
     updateUser(user, callback) {
     
-    	var passwordMd5 = crypto.createHash('md5').update(user.password).digest('hex');
+    	let passwordMd5 = crypto.createHash('md5').update(user.password).digest('hex');
 
-        var update = {username: user.username, password: passwordMd5};
+        let update = {username: user.username, password: passwordMd5};
         this._connection.query('UPDATE users SET ? WHERE id = ?', [update, user.id], function (err, rows, fields) {
                 if (err) {
                     return callback(err);

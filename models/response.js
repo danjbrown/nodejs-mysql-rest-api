@@ -1,8 +1,8 @@
 'use strict';
 
 // global config
-var env = process.env.NODE_ENV || 'development';
-var config = require('./config')[env];
+const env = process.env.NODE_ENV || 'development';
+const config = require('./config')[env];
 
 class Response {
 
@@ -10,7 +10,7 @@ class Response {
     }
 
     /*
-    Function to create a response
+    Function to create the REST API response
      */
     create(error, data) {
         if (error) {

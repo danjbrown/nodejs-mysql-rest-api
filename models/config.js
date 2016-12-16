@@ -1,4 +1,4 @@
-var config = {
+const config = {
     development: {
         // database connection settings for dev
         database: {

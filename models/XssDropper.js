@@ -15,7 +15,7 @@ class XssDropper {
      * @returns {boolean}
      */
     static isValid(val) {
-        var regExp = new RegExp("[\\[\\]@~%$£*^()'\",`]");
+        let regExp = new RegExp("[\\[\\]@~%$£*^()'\",`]");
         if (regExp.exec(val) != null) {
             return false;
         }
