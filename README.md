@@ -31,9 +31,9 @@ Run the application, using nodemon
  node start
  ```
 
-Navigate to http://localhost:8080 to view the web service menu
+Navigate to [http://localhost:3000](http://localhost:3000){:target="_blank"} to view the web service menu
 
-The response is of the following format
+Response format
 
  ```
 {
