@@ -14,10 +14,12 @@
     "mysql": "^2.10.2",
     "serve-favicon": "^2.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bin/www"
+    "start": "nodemon bin/www"
   },
   "author": "",
   "license": "ISC"

@@ -12,17 +12,20 @@ This is a NodeJS RESTful API designed to communicate with a MySql database:
  * Example parameters for the MySql connection are provided in a separate configuration file /models/config.js.
  * The code uses ECMAScript 6 standards including classes, therefore please run it using the latest version of NodeJS.
 
+Features
+ * nodemon, a script monitor that watches for code changes and restarts the application.
+
 ### Usage
 
 Clone or download the repository.
 
-Install the application:
+Install the application
 
  ```
  npm install
  ```
 
-Run the application
+Run the application, using nodemon
 
  ```
  node start
@@ -30,4 +33,14 @@ Run the application
 
 Navigate to http://localhost:8080 to view the web service menu
 
-More documentation to follow...
+The response is of the following format
+
+ ```
+{
+    'meta': {
+        'status': 'error/ok',
+        'message': {error_message}
+    },
+    'data': {data}
+}
+ ```
