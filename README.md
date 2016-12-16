@@ -35,20 +35,20 @@ Navigate to [http://localhost:3000](http://localhost:3000) to view the web servi
 
 ###RESTful API Specification
 
--GET: Retrieve all users
+1. GET: Retrieve all users<br />
 /users
 
--GET: Retrieve details for a single user
-/users/:id
+2. GET: Retrieve details for a single user<br />
+/users/:id<br />
 param: user id
 
--POST: Create a new user
-/users/add
-param: username
+3. POST: Create a new user<br />
+/users/add<br />
+param: username<br />
 param: password
 
--PUT: Update a user
-/users/delete/:id
+4. PUT: Update a user<br />
+/users/delete/:id<br />
 param: id
 
 Response format
